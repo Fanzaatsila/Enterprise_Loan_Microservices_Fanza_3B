@@ -1,0 +1,54 @@
+{
+  "info": {
+    "name": "Loan Microservices - API Gateway",
+    "_postman_id": "api-gateway-sample",
+    "description": "Collection for testing API Gateway endpoints locally",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Apply Loan",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"applicationId\":\"APP01\",\"userId\":\"good-user\",\"amount\":1000,\"product\":\"STD\",\"type\":\"UNSECURED\"}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": { "raw": "http://localhost:3000/api/loans/apply", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","loans","apply"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Audit APP01",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:3000/api/audit/APP01", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","audit","APP01"] }
+      },
+      "response": []
+    },
+    {
+      "name": "Loan Service Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:3000/api/loans/health", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","loans","health"] }
+      },
+      "response": []
+    }
+    ,
+    {
+      "name": "Get Saga APP01",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:3000/api/saga/APP01", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api","saga","APP01"] }
+      },
+      "response": []
+    }
+  ]
+}
